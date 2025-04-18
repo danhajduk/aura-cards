@@ -1,5 +1,6 @@
 console.log('[fade-state-switch] SCRIPT LOADED');
 
+
 /*
 YAML options:
 
