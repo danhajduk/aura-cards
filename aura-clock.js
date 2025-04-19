@@ -79,6 +79,6 @@ class ClockCard extends HTMLElement {
     }
   }
   
-  customElements.define('clock-card', ClockCard);
-  console.log('[clock-card] Custom element registered');
+  customElements.define('aure-clock', ClockCard);
+  console.log('[aura-clock] Custom element registered');
   
