@@ -4,7 +4,7 @@ A sleek collection of custom Home Assistant Lovelace cards designed to elevate y
 
 ## 🌟 Features
 - `fade-state-switch`: Smooth animated state transitions with customization
-![Fade Switch Demo](fade-switch-demo.gif)
+![Fade Switch Demo](state-fade-switch.gif)
 - `custom-weather-card`: Minimalistic forecast display with smart formatting
 - `smart-clock`: Clock card with inline notifications and date
 - More elements coming soon...
