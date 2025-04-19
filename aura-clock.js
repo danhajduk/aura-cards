@@ -86,7 +86,8 @@ class ClockCard extends HTMLElement {
           }
           #clock-date {
             font-size: ${this._dateSize} !important;
-            margin-top: 4px;
+            margin-top: auto;
+            margin-bottom: 5px;
           }
         </style>
         <div class="clock-container">
@@ -108,7 +109,7 @@ class ClockCard extends HTMLElement {
       const timeOptions = this._use24h
         ? { hour: '2-digit', minute: '2-digit', hour12: false }
         : { hour: '2-digit', minute: '2-digit', hour12: true };
-      const dateOptions = { weekday: 'short', month: 'short', day: 'numeric' };
+      const dateOptions = { weekday: 'long', month: 'long', day: 'numeric' };
       timeElement.textContent = now.toLocaleTimeString([], timeOptions);
       dateElement.textContent = now.toLocaleDateString([], dateOptions);
     }

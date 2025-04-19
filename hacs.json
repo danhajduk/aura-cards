@@ -2,8 +2,4 @@
   "name": "Aura Cards",
   "render_readme": true,
   "hide_default_branch": false,
-  "files": [
-    "fade-state-switch.js",
-    "aura-clock.js"
-  ]
 }
