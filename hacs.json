@@ -1,5 +1,6 @@
 {
   "name": "Aura Cards",
   "render_readme": true,
-  "hide_default_branch": false
+  "hide_default_branch": false,
+  "logo" : "logo.png"
 }
