@@ -128,4 +128,4 @@ class ClockCard extends HTMLElement {
   
   customElements.define('aura-clock', ClockCard);
   console.log('[aura-clock] Custom element registered');
-  
+    
