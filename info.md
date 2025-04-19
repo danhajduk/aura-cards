@@ -1,4 +1,4 @@
-![AuraCards Logo](https://github.com/danhajduk/aura-cards/raw/main/logo.png)
+![AuraCards Logo](https://raw.githubusercontent.com/danhajduk/aura-cards/main/logo.png) 
 
 ## AuraCards
 
