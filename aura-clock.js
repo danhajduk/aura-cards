@@ -126,10 +126,12 @@ class ClockCard extends HTMLElement {
     let colon = this._blinkingColon ? '<span class="colon">:</span>' : ':';
     let timeString = this._use24h
       ? `${hours.toString().padStart(2, '0')}${colon}${minutes}`
-      : `${((hours + 11) % 12 + 1)}${colon}${minutes} ${(hours >= 12) ? 'PM' : 'AM'}`;
+      : `${((hours + 11) % 12 + 1)}${colon}${minutes}${this._showSeconds ? '' : ' '}${(hours >= 12) ? 'PM' : 'AM'}`;
+
     if (this._showSeconds) {
       timeString += `${colon}${seconds}`;
     }
+
     timeElement.innerHTML = timeString;
 
     const dateOptions = { weekday: 'long', month: 'long', day: 'numeric' };
