@@ -1,5 +1,5 @@
+![AuraCards Logo](https://raw.githubusercontent.com/danhajduk/aura-cards/main/logo.png) 
 [![Validate](https://github.com/danhajduk/aura-cards/actions/workflows/validate.yaml/badge.svg)](https://github.com/danhajduk/aura-cards/actions/workflows/validate.yaml)
-![AuraCards Logo](https://github.com/danhajduk/aura-cards/raw/main/logo.png)
 
 # AuraCards
 
