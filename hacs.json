@@ -1,6 +1,9 @@
 {
   "name": "Aura Cards",
-  "filename": "fade-state-switch.js",
   "render_readme": true,
-  "hide_default_branch": false
+  "hide_default_branch": false,
+  "files": [
+    "fade-state-switch.js",
+    "aura-clock.js"
+  ]
 }
