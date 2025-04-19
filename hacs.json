@@ -2,6 +2,5 @@
   "name": "Aura Cards",
   "filename": "www/fade-state-switch.js",
   "type": "module",
-  "domains": ["lovelace"],
   "render_readme": true
 }
