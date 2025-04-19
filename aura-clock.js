@@ -87,8 +87,8 @@ class ClockCard extends HTMLElement {
           }
           #clock-date {
             font-size: ${this._dateSize} !important;
-            margin-top: auto;
-            margin-bottom: 5px;
+            margin-top: 5px;
+            margin-bottom: auto;
           }
         </style>
         <div class="clock-container">
