@@ -3,6 +3,7 @@
 
 import './fade-state-switch.js';
 import './aura-clock.js';
+import './aura-weather.js'
 
 console.info(
   '%c[AURA CARDS]',
