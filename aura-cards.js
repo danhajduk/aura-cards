@@ -1,8 +1,8 @@
 // aura-cards.js
 // Main entry point for HACS plugin repo
 
-import 'fade-state-switch.js';
-import 'aura-clock.js';
+import './fade-state-switch.js';
+import './aura-clock.js';
 
 console.info(
   '%c[AURA CARDS]',
