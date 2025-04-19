@@ -1,35 +1,50 @@
-# AuraCards
+## 🌈 AuraCards
 
-Beautiful and responsive Home Assistant cards:
-- ✨ Fade-State-Switch: Animated transitions between card states.
-- ⏰ Smart Clock: Digital clock with optional notification integration. (TBD)
-- 🌤️ Custom Weather: Forecast display with dynamic formatting. (TBD)
+A modern, beautiful set of **Home Assistant** custom cards focused on **smooth transitions**, **clean UI**, and **practical widgets**.
 
-## Installation
-1. Add this repository to HACS (Frontend → Custom Repositories → URL → Lovelace).
-2. Install the cards you want.
-3. Add the resource URLs to your configuration (or let HACS handle it automatically).
-
+### ✨ Included Cards
+- **`fade-state-switch`** — Elegant animated transitions between card states.
+- **`aura-clock`** — Smart digital clock with optional date, font support, and styling.
+- **`custom-weather-card`** — Forecast block with icons and compact layout. *(Coming soon)*
 
 ---
 
-### ✅ GitHub Repo Settings
-1. Name: `aura-cards`
-2. Visibility: Public
-3. Tags: Add a release tag like `v1.0.0` after your first release.
-4. Enable GitHub Pages (optional) to serve demo/config examples.
+## 📦 Installation via HACS
+
+1. Go to **HACS → Frontend → Custom Repositories**
+2. Add this repo URL:  
+   `https://github.com/danhajduk/aura-cards`
+3. Set **category** to `Lovelace`
+4. Install your desired cards
+5. Add resources to `configuration.yaml` or let HACS handle it
 
 ---
 
-### ✅ Register with HACS (optional step)
-To have your repo show up in the public HACS directory, submit it here:
-📎 https://github.com/hacs/default/issues/new?assignees=&labels=add&template=add-repository.yml
+## 🧱 Repository Guidelines
+
+- **Repository name**: `aura-cards`
+- **Public** visibility required
+- Add a **release tag** (e.g. `v1.0.0`) after publishing
+- (Optional) Enable **GitHub Pages** to host a live demo
 
 ---
 
-Let me know if you'd like:
-- Help setting up **GitHub Actions** to auto-minify or bundle your JS
-- A **template for each card’s JS file**
-- A **demo dashboard** to include in your README or GitHub Pages
+## 🚲 Want to List in HACS Store?
 
-You're super close to launch 🚀
+Submit your repo here after first release:  
+👉 [Add to HACS Default](https://github.com/hacs/default/issues/new?assignees=&labels=add&template=add-repository.yml)
+
+---
+
+## 🛠️ Dev Tips
+
+Need help with:
+- ⚙️ Auto-minifying JS via GitHub Actions?
+- 📂 Modular templates for new cards?
+- 📊 Demo dashboard config?
+Just ask — happy to help!
+
+---
+
+Let me know if you'd like me to create a matching `demo` dashboard or help write a `bundle` workflow for releases.
+
