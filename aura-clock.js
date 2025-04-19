@@ -124,12 +124,20 @@ class ClockCard extends HTMLElement {
     let seconds = now.getSeconds().toString().padStart(2, '0');
 
     let colon = this._blinkingColon ? '<span class="colon">:</span>' : ':';
-    let timeString = this._use24h
-      ? `${hours.toString().padStart(2, '0')}${colon}${minutes}`
-      : `${((hours + 11) % 12 + 1)}${colon}${minutes}${this._showSeconds ? '' : ' '}${(hours >= 12) ? 'PM' : 'AM'}`;
+    let timeString = '';
 
-    if (this._showSeconds) {
-      timeString += `${colon}${seconds}`;
+    if (this._use24h) {
+      timeString = `${hours.toString().padStart(2, '0')}${colon}${minutes}`;
+      if (this._showSeconds) {
+        timeString += `${colon}${seconds}`;
+      }
+    } else {
+      const displayHours = ((hours + 11) % 12 + 1);
+      timeString = `${displayHours}${colon}${minutes}`;
+      if (this._showSeconds) {
+        timeString += `${colon}${seconds}`;
+      }
+      timeString += ` ${(hours >= 12) ? 'PM' : 'AM'}`;
     }
 
     timeElement.innerHTML = timeString;
