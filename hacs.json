@@ -1,12 +1,5 @@
 {
   "name": "AuraCards",
-  "description": "A sleek set of custom Lovelace cards with transitions, weather, clock, and more.",
-  "type": "lovelace",
   "render_readme": true,
-  "resources": [
-    {
-      "url": "/local/aura-cards/fade-state-switch.js",
-      "type": "module"
-    }
-  ]
+  "filename": "aura.js"
 }
