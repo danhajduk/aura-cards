@@ -5,7 +5,7 @@ Usage Example (YAML):
 type: custom:aura-clock
 use_24h: false
 show_seconds: false               # Optional - display seconds if true
-blinking_colon: true             # Optional - enable blinking colon effect
+blinking_colon: false             # Optional - enable blinking colon effect
 font_family: '"Segoe UI", sans-serif'  # Optional - font override
 time_size: '2.5em'               # Optional - size for time
 date_size: '1.2em'               # Optional - size for date
@@ -89,7 +89,7 @@ class ClockCard extends HTMLElement {
         }
         #clock-time {
           font-size: ${this._timeSize} !important;
-          padding-top: 5px;
+          padding-top: 10px;
         }
         #clock-date {
           font-size: ${this._dateSize} !important;
