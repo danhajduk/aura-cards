@@ -4,6 +4,8 @@ Usage Example (YAML):
 ```yaml
 type: custom:aura-clock
 use_24h: false
+time_size: '2.5em'       # Optional - default size for time
+date_size: '1.2em'       # Optional - default size for date
 background:
   borderRadius: '16px'
   background: 'linear-gradient(to right, #0d2135, #441c3c)'
@@ -28,7 +30,6 @@ class ClockCard extends HTMLElement {
       this._config = {};
       this.attachShadow({ mode: 'open' });
       this._interval = null;
-      this._resizeObserver = null;
     }
   
     setConfig(config) {
@@ -62,6 +63,8 @@ class ClockCard extends HTMLElement {
       `;
   
       this._use24h = config.use_24h || false;
+      this._timeSize = config.time_size || '2.5em';
+      this._dateSize = config.date_size || '1.2em';
   
       this.shadowRoot.innerHTML = `
         <style>
@@ -78,11 +81,11 @@ class ClockCard extends HTMLElement {
             ${fixed ? `position: fixed; ${positionStyles}` : ''}
             ${bgStyles}
           }
-          .time {
-            font-size: 2.5em;
+          #clock-time {
+            font-size: ${this._timeSize} !important;
           }
-          .date {
-            font-size: 1.2em;
+          #clock-date {
+            font-size: ${this._dateSize} !important;
             margin-top: 4px;
           }
         </style>
@@ -95,8 +98,6 @@ class ClockCard extends HTMLElement {
       this._updateTime();
       if (this._interval) clearInterval(this._interval);
       this._interval = setInterval(() => this._updateTime(), 1000);
-  
-      this._observeResize();
     }
   
     _updateTime() {
@@ -112,26 +113,6 @@ class ClockCard extends HTMLElement {
       dateElement.textContent = now.toLocaleDateString([], dateOptions);
     }
   
-    _observeResize() {
-      const container = this.shadowRoot.querySelector('.clock-container');
-      const timeEl = this.shadowRoot.querySelector('.time');
-      const dateEl = this.shadowRoot.querySelector('.date');
-  
-      if (!container || !timeEl || !dateEl) return;
-  
-      if (this._resizeObserver) this._resizeObserver.disconnect();
-  
-      this._resizeObserver = new ResizeObserver(entries => {
-        for (let entry of entries) {
-          const width = entry.contentRect.width;
-          timeEl.style.fontSize = `${width * 0.25}px`;
-          dateEl.style.fontSize = `${width * 0.10}px`;
-        }
-      });
-  
-      this._resizeObserver.observe(container);
-    }
-  
     getCardSize() {
       return 1;
     }
@@ -140,10 +121,6 @@ class ClockCard extends HTMLElement {
       if (this._interval) {
         clearInterval(this._interval);
         this._interval = null;
-      }
-      if (this._resizeObserver) {
-        this._resizeObserver.disconnect();
-        this._resizeObserver = null;
       }
     }
   }
