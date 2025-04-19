@@ -1,4 +1,6 @@
-## 🌈 AuraCards
+![AuraCards Logo](https://github.com/danhajduk/aura-cards/raw/main/logo.png)
+
+## AuraCards
 
 A modern, beautiful set of **Home Assistant** custom cards focused on **smooth transitions**, **clean UI**, and **practical widgets**.
 

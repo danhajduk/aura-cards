@@ -1,6 +1,7 @@
 [![Validate](https://github.com/danhajduk/aura-cards/actions/workflows/validate.yaml/badge.svg)](https://github.com/danhajduk/aura-cards/actions/workflows/validate.yaml)
+![AuraCards Logo](https://github.com/danhajduk/aura-cards/raw/main/logo.png)
 
-# 🌈 AuraCards
+# AuraCards
 
 _AuraCards_ is a sleek collection of custom Home Assistant Lovelace cards designed to elevate your dashboard with smooth transitions, dynamic visual elements, and modern UI enhancements.
 
