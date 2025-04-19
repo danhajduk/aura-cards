@@ -1,5 +1,9 @@
 {
   "name": "Aura Cards",
-  "filename": "www/fade-state-switch.js",
-  "render_readme": false
+  "filename": "fade-state-switch.js",
+  "render_readme": true,
+  "hide_default_branch": false,
+  "files": [
+    "www/fade-state-switch.js"
+  ]
 }
