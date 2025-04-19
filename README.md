@@ -1,3 +1,4 @@
+[![Validate](https://github.com/danhajduk/aura-cards/actions/workflows/validate.yaml/badge.svg)](https://github.com/danhajduk/aura-cards/actions/workflows/validate.yaml)
 # AuraCards 🌈
 A sleek collection of custom Home Assistant Lovelace cards designed to elevate your dashboard experience.
 
