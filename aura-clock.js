@@ -83,7 +83,7 @@ class ClockCard extends HTMLElement {
           }
           #clock-time {
             font-size: ${this._timeSize} !important;
-            top: 10px;
+            padding-top: 5px;
           }
           #clock-date {
             font-size: ${this._dateSize} !important;
@@ -129,4 +129,4 @@ class ClockCard extends HTMLElement {
   
   customElements.define('aura-clock', ClockCard);
   console.log('[aura-clock] Custom element registered');
-    
+  
