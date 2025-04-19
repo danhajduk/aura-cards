@@ -5,10 +5,14 @@ Usage Example (YAML):
 type: custom:aura-clock
 use_24h: false
 show_seconds: false               # Optional - display seconds if true
-blinking_colon: false             # Optional - enable blinking colon effect
-font_family: '"Segoe UI", sans-serif'  # Optional - font override
+blinking_colon: true             # Optional - enable blinking colon effect
+font_family: 'Segoe UI, sans-serif'  # Optional - font override
 time_size: '2.5em'               # Optional - size for time
 date_size: '1.2em'               # Optional - size for date
+layout: stacked                  # Optional - 'stacked' or 'horizontal'
+icon: mdi:clock-time-four-outline # Optional - icon to show before time
+color_time: white                # Optional - color override for time
+color_date: white                # Optional - color override for date
 background:
   borderRadius: '16px'
   background: 'linear-gradient(to right, #0d2135, #441c3c)'
@@ -68,31 +72,42 @@ class ClockCard extends HTMLElement {
     this._use24h = config.use_24h || false;
     this._showSeconds = config.show_seconds || false;
     this._blinkingColon = config.blinking_colon || false;
-    this._fontFamily = config.font_family || '"Segoe UI", sans-serif';
+    this._fontFamily = config.font_family || 'Segoe UI, sans-serif';
     this._timeSize = config.time_size || '2.5em';
     this._dateSize = config.date_size || '1.2em';
+    this._layout = config.layout || 'stacked';
+    this._icon = config.icon || '';
+    this._colorTime = config.color_time || 'white';
+    this._colorDate = config.color_date || 'white';
+
+    const layoutStyle = this._layout === 'horizontal' ? 'row' : 'column';
 
     this.shadowRoot.innerHTML = `
       <style>
         .clock-container {
           display: flex;
-          flex-direction: column;
+          flex-direction: ${layoutStyle};
           justify-content: center;
           align-items: center;
           font-family: ${this._fontFamily};
-          color: white;
           width: ${width};
           height: ${height};
           overflow: ${overflow};
           ${fixed ? `position: fixed; ${positionStyles}` : ''}
           ${bgStyles}
         }
+        .clock-icon {
+          margin-right: ${this._layout === 'horizontal' ? '10px' : '0'};
+          font-size: ${this._dateSize};
+        }
         #clock-time {
           font-size: ${this._timeSize} !important;
-          padding-top: 10px;
+          color: ${this._colorTime};
+          padding-top: 5px;
         }
         #clock-date {
           font-size: ${this._dateSize} !important;
+          color: ${this._colorDate};
           margin-top: auto;
           margin-bottom: 5px;
         }
@@ -104,8 +119,11 @@ class ClockCard extends HTMLElement {
         }
       </style>
       <div class="clock-container">
-        <div class="time" id="clock-time"></div>
-        <div class="date" id="clock-date"></div>
+        ${this._icon ? `<ha-icon class="clock-icon" icon="${this._icon}"></ha-icon>` : ''}
+        <div class="clock-content">
+          <div class="time" id="clock-time"></div>
+          <div class="date" id="clock-date"></div>
+        </div>
       </div>
     `;
 
